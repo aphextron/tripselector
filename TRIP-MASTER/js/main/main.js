@@ -2,7 +2,7 @@
 /// <reference path="../../scripts/libs/underscore.js" />
 /// <reference path="../../scripts/libs/backbone.js" />
 jQuery(function(){ 
-    
+
 var Theater = {
     Models: {},
     Collections: {},
@@ -36,10 +36,10 @@ Theater.Collections.Movies = Backbone.Collection.extend({
     }
 });
 
-Theater.Templates.movies = _.template($("#tmplt-Movies").html())
+Theater.Templates.movies = _.template(jQuery("#tmplt-Movies").html())
 
 Theater.Views.Movies = Backbone.View.extend({
-    el: $("#mainContainer"),
+    el: jQuery("#mainContainer"),
     template: Theater.Templates.movies,
 
     events: {
@@ -53,10 +53,10 @@ Theater.Views.Movies = Backbone.View.extend({
     },
 
     render: function () {
-        $(this.el).html(this.template());
+        jQuery(this.el).html(this.template());
         this.addAll();
-        $('#mainContainer ul li:eq(0)').hide()
-        $('#mainContainer ul li:eq(1)').hide()
+        jQuery('#mainContainer ul li:eq(0)').hide()
+        jQuery('#mainContainer ul li:eq(1)').hide()
     },
 
     changeOptionVal: function(){
@@ -64,7 +64,7 @@ Theater.Views.Movies = Backbone.View.extend({
         for (var i = 0; i < this.collection.models.length; i++) {
 
                         
-                        var f = $('.optionChange:eq('+i+')')[0].value;
+                        var f = jQuery('.optionChange:eq('+i+')')[0].value;
                         if (f === "yes") { 
                                 this.collection.models[i].set({"optionValue":"yes"});
                         }
@@ -81,12 +81,12 @@ Theater.Views.Movies = Backbone.View.extend({
                         
                  };
                  console.log(optionArray);
-      $.ajax({
+      jQuery.ajax({
         type: "GET",
         url: "test.php",
         data: optionArray
         }).done(function(msg) {
-       $('#ajaxReturn').html(msg);
+       jQuery('#ajaxReturn').html(msg);
         });                         
     
     },
@@ -99,13 +99,13 @@ Theater.Views.Movies = Backbone.View.extend({
     addOne: function (model) {
         console.log("addOne")
         view = new Theater.Views.Movie({ model: model });
-        $("ul", this.el).append(view.render());
+        jQuery("ul", this.el).append(view.render());
     }
 
 })
 
 
-Theater.Templates.movie = _.template($("#tmplt-Movie").html())
+Theater.Templates.movie = _.template(jQuery("#tmplt-Movie").html())
 Theater.Views.Movie = Backbone.View.extend({
     tagName: "li",
     template: Theater.Templates.movie,
@@ -118,7 +118,7 @@ Theater.Views.Movie = Backbone.View.extend({
     },
 
     render: function () {
-        return $(this.el).append(this.template(this.model.toJSON())) ;
+        return jQuery(this.el).append(this.template(this.model.toJSON())) ;
     },
 
     removeItem: function (model) {
