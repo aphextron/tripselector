@@ -1,0 +1,43 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+h1, h3{
+	color: rgb(201, 0, 0);
+}
+
+
+
+ul li{
+	width: 203px;
+margin: 0px auto;
+}
+
+.selection_container{
+box-shadow: 0 0 57px -8px grey;
+border-radius: 5px;
+margin-top: 23px;
+margin-bottom: 8%;
+}
+
+.yes_click{
+background-position: 0,0;
+width: 48px;
+height: 38px;
+overflow: hidden;
+background-image: url('../img/yes_no_icon.png');
+}
+.no_click{
+
+background-position: -49px,0px;
+width: 42px;
+height: 39px;
+overflow: hidden;
+background-image: url('../img/yes_no_icon.png');
+
+}
+
+
+
