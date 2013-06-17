@@ -1,7 +1,8 @@
 ﻿/// <reference path="../../scripts/libs/jquery-1.7.1.js" />
 /// <reference path="../../scripts/libs/underscore.js" />
 /// <reference path="../../scripts/libs/backbone.js" />
-
+jQuery(function(){ 
+    
 var Theater = {
     Models: {},
     Collections: {},
@@ -143,5 +144,5 @@ Theater.Router = Backbone.Router.extend({
 
 var appRouter = new Theater.Router();
 Backbone.history.start();
-
+});
 
