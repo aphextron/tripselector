@@ -1,0 +1,40 @@
+﻿<html>
+<head>
+	<title>Easy tour creator</title>
+    <link rel="stylesheet" type="text/css" href="./css/lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/lib/bootstrap-responsive.min">
+    <link rel="stylesheet" type="text/css" href="./css/main/main.css">
+</head>
+<body>
+    <h1>Easy tour creator</h1>
+    
+    
+    <div id="mainContainer"> 
+    </div>
+    <div class="findTour">
+    <button class="findTour">Find</button>
+    </div>
+    <div id="ajaxReturn">
+    </div>
+    <script type="text/template" id="tmplt-Movies">
+        <ul>
+        </ul>
+    </script>
+    <script type="text/template" id="tmplt-Movie">
+        <div>
+		<div><%= title %> </div>
+		<div><%= description %> </div>
+        <form>
+        <select class="optionChange">
+                <option>no</option>
+                <option>yes</option>
+        </select>
+        </form>
+    </script>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/underscore.js"></script>
+    <script src="./js/lib/backbone-min.js"></script>
+    <script src="./js/main/main.js"></script>   
+    <script src="./js/lib/modernizr-2.6.2-respond-1.1.0.min"></script>
+</body>
+</html>

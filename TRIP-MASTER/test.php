@@ -1,11 +1,9 @@
-<?php
-$data = file_get_contents("tours.js");
+ <?php 
+
+$data = file_get_contents("./data/tourModels.json");
 $tourInfo = json_decode($data, true);
 $compare = ($_GET);
 
-print_r($tourInfo);
-echo "<br><br>";
-print_r($compare);
 
 function distance($a, $compare_with) {
     $in_common = 0;
@@ -20,10 +18,11 @@ function most_in_common($object_list, $compare_with) {
     foreach ($object_list as $key => $val) {
         $in_common[$key] = distance($val, $compare_with);
     }
-    return $object_list[array_search(max($in_common), $in_common)];
+    return $object_list[array_search(max($in_common), $in_common)]["id"];
 }
-echo "<br> <br>";
-
- print_r(most_in_common($tourInfo, $compare));
 
 
+var_dump(most_in_common($tourInfo, $compare));
+
+
+?>

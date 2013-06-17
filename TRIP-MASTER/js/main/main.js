@@ -13,23 +13,23 @@ Theater.Models.Movie = Backbone.Model.extend({});
 Theater.Models.tourPackage = Backbone.Model.extend({
 
           defaults: {
-            "id": " ",
-            "name": " ",
-            "greeting": false,
-            "canoeRide": false,
-            "behindScenes": false,
-            "dvd": false,
-            "desert": false,
-            "tourGuide": false,
-            "dinner": 0,
-            "seatingLevel": 0,
-            "combo": false
+            "id": "",
+            "name": "",
+            "greeting": "false",
+            "canoeRide": "false",
+            "behindScenes": "false",
+            "dvd": "false",
+            "desert": "false",
+            "tourGuide": "false",
+            "dinner": "0",
+            "seatingLevel": "0",
+            "combo": "false"
   }
 
 });
 Theater.Collections.Movies = Backbone.Collection.extend({
     model: Theater.Models.Movie,
-    url: "scripts/data/tours.json",
+    url: "./data/tours.json",
     initialize: function(){
         console.log("Movies initialize")
     }
@@ -52,10 +52,10 @@ Theater.Views.Movies = Backbone.View.extend({
     },
 
     render: function () {
-        console.log("render")
-        console.log(this.collection.length);
         $(this.el).html(this.template());
         this.addAll();
+        $('#mainContainer ul li:eq(0)').hide()
+        $('#mainContainer ul li:eq(1)').hide()
     },
 
     changeOptionVal: function(){
@@ -67,14 +67,14 @@ Theater.Views.Movies = Backbone.View.extend({
                         if (f === "yes") { 
                                 this.collection.models[i].set({"optionValue":"yes"});
                         }
-                        else{
+                        if (f === "no"){
                             this.collection.models[i].set({"optionValue":"no"});
                         }
                        
                         var option1 = this.collection.models[i].get("optionName");                  
                         var option2 = this.collection.models[i].get("optionValue");
                         
-                        optionArray[option1] = [option2];
+                        optionArray[option1] = option2;
                               
                         
                         
@@ -84,8 +84,8 @@ Theater.Views.Movies = Backbone.View.extend({
         type: "GET",
         url: "test.php",
         data: optionArray
-        }).done(function( msg ) {
-        $('.ajaxReturn').html(msg);
+        }).done(function(msg) {
+       $('#ajaxReturn').html(msg);
         });                         
     
     },
