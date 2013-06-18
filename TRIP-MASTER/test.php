@@ -18,7 +18,7 @@ function most_in_common($object_list, $compare_with) {
     foreach ($object_list as $key => $val) {
         $in_common[$key] = distance($val, $compare_with);
     }
-    return $object_list[array_search(max($in_common), $in_common)]["id"];
+    return $object_list[array_search(max($in_common), $in_common)]["name"];
 }
 
 
