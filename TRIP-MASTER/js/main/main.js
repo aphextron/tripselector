@@ -109,10 +109,9 @@ tourApp.Templates.tour = _.template(jQuery("#tmplt-Tour").html())
 tourApp.Views.Tour = Backbone.View.extend({
     tagName: "li",
     template: tourApp.Templates.tour,
-    //events: { "click .delete": "test" },
+    
 
     initialize: function () {
-        //_.bindAll(this, 'render', 'test');
         this.model.bind('destroy', this.destroyItem, this);
         this.model.bind('remove', this.removeItem, this);
     },
