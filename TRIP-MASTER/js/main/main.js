@@ -1,7 +1,6 @@
 ﻿
 (function(){
 jQuery(function(){ 
-
 var tourApp = {
     Models: {},
     Collections: {},
@@ -42,8 +41,9 @@ tourApp.Views.Tours = Backbone.View.extend({
     template: tourApp.Templates.tours,
 
     events: {
-        "change .optionChange": "changeOptionVal"
-
+        "change .optionChange": "changeOptionVal",
+        "click .yes_click": "yesClick",
+        "click .no_click" : "noClick"
     },
 
     initialize: function () {
@@ -57,7 +57,12 @@ tourApp.Views.Tours = Backbone.View.extend({
         jQuery('#mainContainer ul li:eq(0)').hide()
         jQuery('#mainContainer ul li:eq(1)').hide()
     },
-
+    noClick: function(){
+        alert('no')
+    },
+    yesClick: function(){
+        alert('yes!');
+    },
     changeOptionVal: function(){
         var optionArray = {}
         for (var i = 0; i < this.collection.models.length; i++) {

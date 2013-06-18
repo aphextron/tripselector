@@ -20,9 +20,29 @@ function most_in_common($object_list, $compare_with) {
     }
     return $object_list[array_search(max($in_common), $in_common)]["name"];
 }
+if ($compare["combo"] == "all") {
+    $result = $tourInfo[10];
+    echo $result["name"];
 
-
-var_dump(most_in_common($tourInfo, $compare));
-
+}
+elseif ($compare["combo"] == "pearl") {
+     $result = $tourInfo[9];
+    echo $result["name"];
+}
+    elseif ($compare["combo"] == "northShore") {
+     $result = $tourInfo[5];
+    echo $result["name"];
+}
+    elseif ($compare["combo"] == "dole") {
+     $result = $tourInfo[6];
+    echo $result["name"];
+}
+    elseif ($compare["combo"] == "pearlDole") {
+     $result = $tourInfo[4];
+    echo $result["name"];
+}
+else{
+echo(most_in_common($tourInfo, $compare));
+}
 
 ?>
