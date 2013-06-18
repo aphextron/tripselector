@@ -6,21 +6,18 @@
     <link rel="stylesheet" type="text/css" href="./css/main/main.css">
 </head>
 <body>
-    <h1>Easy tour creator</h1>
-    
-    
+    <h1>Easy tour creator</h1>      
     <div id="mainContainer"> 
     </div>
     <div class="findTour">
-    <button class="findTour">Find</button>
     </div>
     <div id="ajaxReturn">
     </div>
-    <script type="text/template" id="tmplt-Movies">
+    <script type="text/template" id="tmplt-Tours">
         <ul>
         </ul>
     </script>
-    <script type="text/template" id="tmplt-Movie">
+    <script type="text/template" id="tmplt-Tour">
         <div>
 		<div><%= title %> </div>
 		<div><%= description %> </div>
@@ -29,6 +26,7 @@
                 <option>no</option>
                 <option>yes</option>
         </select>
+
         </form>
     </script>
     <script src="./js/lib/jquery.min.js"></script>

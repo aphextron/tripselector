@@ -3,15 +3,15 @@
 /// <reference path="../../scripts/libs/backbone.js" />
 jQuery(function(){ 
 
-var Theater = {
+var tourApp = {
     Models: {},
     Collections: {},
     Views: {},
     Templates:{}
 }
 
-Theater.Models.Movie = Backbone.Model.extend({});
-Theater.Models.tourPackage = Backbone.Model.extend({
+tourApp.Models.Tour = Backbone.Model.extend({});
+tourApp.Models.tourPackage = Backbone.Model.extend({
 
           defaults: {
             "id": "",
@@ -28,22 +28,22 @@ Theater.Models.tourPackage = Backbone.Model.extend({
   }
 
 });
-Theater.Collections.Movies = Backbone.Collection.extend({
-    model: Theater.Models.Movie,
+tourApp.Collections.Tours = Backbone.Collection.extend({
+    model: tourApp.Models.Tour,
     url: "./data/tours.json",
     initialize: function(){
-        console.log("Movies initialize")
+        console.log("Tours initialize")
     }
 });
 
-Theater.Templates.movies = _.template(jQuery("#tmplt-Movies").html())
+tourApp.Templates.tours = _.template(jQuery("#tmplt-Tours").html())
 
-Theater.Views.Movies = Backbone.View.extend({
+tourApp.Views.Tours = Backbone.View.extend({
     el: jQuery("#mainContainer"),
-    template: Theater.Templates.movies,
+    template: tourApp.Templates.tours,
 
     events: {
-        "change .optionChange": "changeOptionVal",
+        "change .optionChange": "changeOptionVal"
 
     },
 
@@ -81,13 +81,13 @@ Theater.Views.Movies = Backbone.View.extend({
                         
                  };
                  console.log(optionArray);
-      jQuery.ajax({
-        type: "GET",
-        url: "test.php",
-        data: optionArray
-        }).done(function(msg) {
-       jQuery('#ajaxReturn').html(msg);
-        });                         
+                  jQuery.ajax({
+                    type: "GET",
+                    url: "test.php",
+                    data: optionArray
+                    }).done(function(msg) {
+                   jQuery('#ajaxReturn').html(msg);
+                  });                         
     
     },
 
@@ -98,17 +98,17 @@ Theater.Views.Movies = Backbone.View.extend({
 
     addOne: function (model) {
         console.log("addOne")
-        view = new Theater.Views.Movie({ model: model });
+        view = new tourApp.Views.Tour({ model: model });
         jQuery("ul", this.el).append(view.render());
     }
 
-})
+});
 
 
-Theater.Templates.movie = _.template(jQuery("#tmplt-Movie").html())
-Theater.Views.Movie = Backbone.View.extend({
+tourApp.Templates.tour = _.template(jQuery("#tmplt-Tour").html())
+tourApp.Views.Tour = Backbone.View.extend({
     tagName: "li",
-    template: Theater.Templates.movie,
+    template: tourApp.Templates.tour,
     //events: { "click .delete": "test" },
 
     initialize: function () {
@@ -118,31 +118,27 @@ Theater.Views.Movie = Backbone.View.extend({
     },
 
     render: function () {
-        return jQuery(this.el).append(this.template(this.model.toJSON())) ;
-    },
-
-    removeItem: function (model) {
-        console.log("Remove - " + model.get("Name"))
-        this.remove();
+        return jQuery(this.el).append(this.template(this.model.toJSON()));
     }
-})
+
+});
 
 
-Theater.Router = Backbone.Router.extend({
+tourApp.Router = Backbone.Router.extend({
     routes: {
-        "": "defaultRoute"  //http://localhost:22257/Theater/theater.htm
+        "": "defaultRoute" 
     },
 
     defaultRoute: function () {
         console.log("defaultRoute");
-        Theater.movies = new Theater.Collections.Movies()
-        new Theater.Views.Movies({ collection: Theater.movies }); //Add this line
-        Theater.movies.fetch();
-        console.log(Theater.movies.length)
+        tourApp.tours = new tourApp.Collections.Tours()
+        new tourApp.Views.Tours({ collection: tourApp.tours }); //Add this line
+        tourApp.tours.fetch();
+        console.log(tourApp.tours.length)
     }
-})
+});
 
-var appRouter = new Theater.Router();
+var appRouter = new tourApp.Router();
 Backbone.history.start();
 });
 
