@@ -1,6 +1,5 @@
 ﻿<html>
 <head>
-	<title>Easy tour creator</title>
     <link rel="stylesheet" type="text/css" href="./css/lib/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/lib/bootstrap-responsive.min.css">
     <link rel="stylesheet" type="text/css" href="./css/main/main.css">
@@ -18,18 +17,32 @@
         </ul>
     </script>
     <script type="text/template" id="tmplt-Tour">
-        <div>
-		<div><%= title %> </div>
-		<div><%= description %> </div>
-        <form>
-        <select class="optionChange">
-                <option>no</option>
-                <option>yes</option>
-        </select>
-
-        </form>
+        <div class="selectHolder">
+		    <div><%= title %> </div>
+	   	    <div><%= description %> </div>
+            <form>
+                <select class="optionChange">
+                    <% if ((title != "Dinner") && (title != "Seating") && (title != "Tour combination")) { %>
+                        <option>no</option>
+                        <option>yes</option>
+                    <% }; %>
+                    <% if((title == "Dinner") || (title == "Seating")){ %>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    <% }; %>
+                    <% if(title == "Tour combination"){ %>
+                        <option>Pearl Harbor</option>
+                        <option>Dole Plantation</option>
+                        <option>North Shore</option>
+                        <option>Pearl Harbor and the Dole Plantation</option>
+                        <option>Circle Island</option>
+                    <% }; %>
+                </select>
+            </form>
+        </div>
     </script>
-    <script src="./js/lib/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script src="./js/lib/underscore.js"></script>
     <script src="./js/lib/backbone-min.js"></script>
     <script src="./js/main/main.js"></script>   

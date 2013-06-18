@@ -8,8 +8,8 @@
         "dvd": "yes",
         "Dessert": "yes",
         "tourGuide": "yes",
-        "dinner": 3,
-        "seatingLevel": 3,
+        "dinner": "3",
+        "seatingLevel": "3",
         "combo": "no"
     },
     {
@@ -21,8 +21,8 @@
         "dvd": "no",
         "Dessert": "no",
         "tourGuide": "no",
-        "dinner": 2,
-        "seatingLevel": 2,
+        "dinner": "2",
+        "seatingLevel": "2",
         "combo": "no"
     },
     {
@@ -34,8 +34,8 @@
         "dvd": "no",
         "Dessert": "no",
         "tourGuide": "no",
-        "dinner": 0,
-        "seatingLevel": 1,
+        "dinner": "0",
+        "seatingLevel": "1",
         "combo": "no"
     },
     {
@@ -47,8 +47,8 @@
         "dvd": "yes",
         "Dessert": "yes",
         "tourGuide": "yes",
-        "dinner": 3,
-        "seatingLevel": 2,
+        "dinner": "3",
+        "seatingLevel": "2",
         "combo": "no"
     },
     {
@@ -60,8 +60,8 @@
         "dvd": "no",
         "Dessert": "no",
         "tourGuide": "no",
-        "dinner": 2,
-        "seatingLevel": 2,
+        "dinner": "2",
+        "seatingLevel": "2",
         "combo": "pearlDole"
     },
     {
@@ -73,8 +73,8 @@
         "dvd": "no",
         "Dessert": "no",
         "tourGuide": "no",
-        "dinner": 3,
-        "seatingLevel": 2,
+        "dinner": "3",
+        "seatingLevel": "2",
         "combo": "northShore"
     },
     {
@@ -86,8 +86,8 @@
         "dvd": "no",
         "Dessert": "no",
         "tourGuide": "no",
-        "dinner": 1,
-        "seatingLevel": 0,
+        "dinner": "1",
+        "seatingLevel": "0",
         "combo": "dole"
     },
     {
@@ -99,8 +99,8 @@
         "dvd": "no",
         "Dessert": "no",
         "tourGuide": "no",
-        "dinner": 2,
-        "seatingLevel": 2,
+        "dinner": "2",
+        "seatingLevel": "2",
         "combo": "pearl"
     },
     {
@@ -112,8 +112,8 @@
         "dvd": "no",
         "Dessert": "yes",
         "tourGuide": "no",
-        "dinner": 2,
-        "seatingLevel": 2,
+        "dinner": "2",
+        "seatingLevel": "2",
         "combo": "all"
     },
     {
@@ -125,8 +125,8 @@
         "dvd": "no",
         "Dessert": "no",
         "tourGuide": "no",
-        "dinner": 2,
-        "seatingLevel": 2,
+        "dinner": "2",
+        "seatingLevel": "2",
         "combo": "pearl"
     },
     {
@@ -138,8 +138,8 @@
         "dvd": "no",
         "Dessert": "no",
         "tourGuide": "no",
-        "dinner": 2,
-        "seatingLevel": 2,
+        "dinner": "2",
+        "seatingLevel": "2",
         "combo": "all"
     }
 ]

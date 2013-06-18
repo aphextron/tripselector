@@ -1,6 +1,5 @@
-﻿/// <reference path="../../scripts/libs/jquery-1.7.1.js" />
-/// <reference path="../../scripts/libs/underscore.js" />
-/// <reference path="../../scripts/libs/backbone.js" />
+﻿
+(function(){
 jQuery(function(){ 
 
 var tourApp = {
@@ -71,7 +70,33 @@ tourApp.Views.Tours = Backbone.View.extend({
                         if (f === "no"){
                             this.collection.models[i].set({"optionValue":"no"});
                         }
-                       
+                        if(f === "0"){
+                            this.collection.models[i].set({"optionValue":"0"});
+                        }
+                        if(f === "1"){
+                            this.collection.models[i].set({"optionValue":"1"});
+                        }
+                        if(f === "2"){
+                            this.collection.models[i].set({"optionValue":"2"});
+                        }
+                        if(f === "3"){
+                            this.collection.models[i].set({"optionValue":"3"});
+                        }
+                        if(f === "Dole Plantation"){
+                            this.collection.models[i].set({"optionValue":"dole"});
+                        }
+                        if(f === "Pearl Harbor"){
+                            this.collection.models[i].set({"optionValue":"pearl"});
+                        }
+                        if(f === "Pearl Harbor and the Dole Plantation"){
+                            this.collection.models[i].set({"optionValue":"pearlDole"});
+                        }
+                        if(f === "Circle Island"){
+                            this.collection.models[i].set({"optionValue":"all"});
+                        }
+                       if(f === "North Shore"){
+                            this.collection.models[i].set({"optionValue":"northShore"});
+                        }
                         var option1 = this.collection.models[i].get("optionName");                  
                         var option2 = this.collection.models[i].get("optionValue");
                         
@@ -141,4 +166,4 @@ tourApp.Router = Backbone.Router.extend({
 var appRouter = new tourApp.Router();
 Backbone.history.start();
 });
-
+})();

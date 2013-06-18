@@ -12,55 +12,55 @@
         "optionValue": ""
     },
     {
-        "title": "lei greeting",
-        "description": "would you like a lei greeting?",
+        "title": "Lei greeting",
+        "description": "Would you like a Lei greeting?",
         "optionName": "greeting",
         "optionValue": "no"
     },
     {
-        "title": "canoe ride",
-        "description": "would you liek a Hawaiian canoe ride?",
+        "title": "Canoe Ride",
+        "description": "Would you like a Hawaiian canoe ride?",
         "optionName": "canoeRide",
         "optionValue": "no"
     },
     {
-        "title": "behind the scenes tour",
-        "description": "Would you like a behind the scenes tour of ha breath of life?",
+        "title": "Behind the scenes tour",
+        "description": "Would you like a behind the scenes tour of Ha: Breath of Life?",
         "optionName": "behindScenes",
         "optionValue": "no"
     },
     {
-        "title": "souvenir DVD",
-        "description": "Would you like to take home a souvenir dvd of ha breath of life?",
+        "title": "Souvenir DVD",
+        "description": "Would you like to take home a souvenir dvd of Ha: Breath of Life?",
         "optionName": "dvd",
         "optionValue": "no"
     },
-    {        "title": "Dessert optionValue ",
-        "description": "Would you like a chocolate lava cake dessert during ha breath of life?",
+    {        "title": "Dessert",
+        "description": "Would you like a chocolate lava cake dessert during Ha: Breath of Life?",
         "optionName": "Dessert",
         "optionValue": "no"
     },
     {
                 "title":"Tour guide",
-        "description": "Would you like a personal tour guid during your visit to pcc?",
+        "description": "Would you like a personal tour guide during your visit to the Polynesian Cultural Center?",
         "optionName": "tourGuide",
         "optionValue": "no"
     },
     {
                 "title": "Dinner",
-        "description": "which dining option do you prefer?",
+        "description": "Which dining option do you prefer?",
         "optionName": "dinner",
         "optionValue": "no"
     },
     {
                 "title": "Seating",
-        "description": "Where would you like to sit for the ha breath of life show?",
+        "description": "What seating level would you like for the Ha: Breath of Life show?",
         "optionName": "seatingLevel",
         "optionValue": "no"
     },
     {
                "title": "Tour combination",
-        "description": "Would you like to compint",
+        "description": "Would you like to combine this tour with any other packages?",
         "optionName": "combo",
         "optionValue": "no"
     }
