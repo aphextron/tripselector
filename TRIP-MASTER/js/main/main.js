@@ -1,5 +1,4 @@
 ﻿
-
 var tourApp = {
     Models: {},
     Collections: {},
@@ -10,24 +9,26 @@ var tourApp = {
 tourApp.Models.Tour = Backbone.Model.extend({});
 tourApp.Models.tourPackage = Backbone.Model.extend({
 
-          defaults: {
-            "id": "",
-            "name": "",
-            "greeting": "false",
-            "canoeRide": "false",
-            "behindScenes": "false",
-            "dvd": "false",
-            "desert": "false",
-            "tourGuide": "false",
-            "dinner": "0",
-            "seatingLevel": "0",
-            "combo": "false"
-  }
+    defaults: {
+     "id": "",
+     "name": "",
+     "greeting": "false",
+     "canoeRide": "false",
+     "behindScenes": "false",
+     "dvd": "false",
+     "desert": "false",
+     "tourGuide": "false",
+     "dinner": "0",
+     "seatingLevel": "0",
+     "combo": "false"
+    }
 
 });
+
 tourApp.Collections.Tours = Backbone.Collection.extend({
     model: tourApp.Models.Tour,
     url: "./data/tours.json",
+    
     initialize: function(){
         console.log("Tours initialize")
     }
@@ -76,7 +77,6 @@ tourApp.Views.Tour = Backbone.View.extend({
     },
 
     initialize: function () {
-        //_.bindAll(this, 'render', 'test');
         this.model.bind('destroy', this.destroyItem, this);
         this.model.bind('remove', this.removeItem, this);
     },
@@ -148,20 +148,21 @@ tourApp.Router = Backbone.Router.extend({
 var appRouter = new tourApp.Router();
 Backbone.history.start();
 
-jQuery("#findTour").click(function(){
-    
+jQuery("#findTour").click(function(){    
     var c = {};
     for (var i = 0; i < tourApp.tours.length; i++){
       var a = tourApp.tours.models[i].get("optionName");
       var b = tourApp.tours.models[i].get("optionValue");
-       c[a] = b;
+      c[a] = b;
     }
+
     console.log(c);
-    jQuery.ajax({
-       type: "GET",
-       url: "test.php",
-       data: c
-       }).done(function(msg) {
-      jQuery('#ajaxReturn').html("<h2>" + msg + "<h2>");
-     });                         
+
+jQuery.ajax({
+    type: "GET",
+    url: "test.php",
+    data: c
+    }).done(function(msg) {
+    jQuery('#ajaxReturn').html("<h2>" + msg + "<h2>");
+    });                         
 });
