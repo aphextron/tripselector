@@ -62,7 +62,7 @@
         "tourGuide": "no",
         "dinner": "2",
         "seatingLevel": "2",
-        "combo": "pearlDole"
+        "combo": "Pearl Harbor and the Dole Plantation"
     },
     {
         "id": "931",
@@ -75,7 +75,7 @@
         "tourGuide": "no",
         "dinner": "3",
         "seatingLevel": "2",
-        "combo": "northShore"
+        "combo": "North Shore"
     },
     {
         "id": "807",
@@ -88,7 +88,7 @@
         "tourGuide": "no",
         "dinner": "1",
         "seatingLevel": "0",
-        "combo": "dole"
+        "combo": "Dole Plantation"
     },
     {
         "id": "898",
@@ -101,7 +101,7 @@
         "tourGuide": "no",
         "dinner": "2",
         "seatingLevel": "2",
-        "combo": "pearl"
+        "combo": "Pearl Harbor"
     },
     {
         "id": "815",
@@ -114,7 +114,7 @@
         "tourGuide": "no",
         "dinner": "2",
         "seatingLevel": "2",
-        "combo": "all"
+        "combo": "Circle Island"
     },
     {
         "id": "879",
@@ -127,7 +127,7 @@
         "tourGuide": "no",
         "dinner": "2",
         "seatingLevel": "2",
-        "combo": "pearl"
+        "combo": "Pearl Harbor"
     },
     {
         "id": "1029",
@@ -140,6 +140,6 @@
         "tourGuide": "no",
         "dinner": "2",
         "seatingLevel": "2",
-        "combo": "all"
+        "combo": "Circle Island"
     }
 ]

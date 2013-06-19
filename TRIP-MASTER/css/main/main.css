@@ -12,7 +12,7 @@
 margin: 0px auto;
 }
 
-.tripSelectWrapper ul, li {
+.tripSelectWrapper ul li {
 	list-style: none;
 	padding: 32px;
 margin: 20px;
@@ -28,12 +28,29 @@ border-radius: 3px;
 box-shadow: 1px 1px 1px 1px grey;
 
 }
-
+.tripSelectWrapper p {
+	font-size: 20px;
+}
 .tripSelectWrapper .selectHolder{
 	width: 270px;
 	float: right;
 }
+.tripSelectWrapper #findTour{
+	height: 72px;
+width: 200px;
+font-size: 26px;
+text-shadow: 0px -1px 0px black;
+}
 
+.tripSelectWrapper .yes_no_wrap{
+width: 64%;
+margin: 0px auto;
+}
+
+.tripSelectWrapper .findTour{
+	width: 201px;
+margin: 13px auto;
+}
 .selection_container{
 box-shadow: 0 0 57px -8px grey;
 border-radius: 5px;

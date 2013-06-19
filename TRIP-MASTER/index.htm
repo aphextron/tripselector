@@ -11,8 +11,14 @@
 
     <div id="mainContainer"> 
     </div>
-    <div class="findTour">
+    <div class="row">
+        <div class="span12"?\>
+            <div class="findTour">
+              <input type="submit" id="findTour" value="Find my tour!" class="btn btn-primary btn-large">
+            </div>
+        </div>
     </div>
+    <h1>Your perfect tour:</h1>
     <div id="ajaxReturn">
     </div>
   </div>
@@ -24,38 +30,42 @@
     <script type="text/template" id="tmplt-Tour">
     <div class="row-fluid">
         <div class="span12">
-        <div class="imageHolder">
-           
+        <div class="imageHolder">           
         </div>
         <div class="selectHolder">
-		    <div><%= title %> </div>
-	   	    <div><%= description %> </div>
+		    <h2><%= title %> </h2>
+	   	    <p><%= description %><p>
             <form>
-                <select class="optionChange">
-                    <% if ((title != "Dinner") && (title != "Seating") && (title != "Tour combination")) { %>
-                        <option>no</option>
-                        <option>yes</option>
-                    <% }; %>
                     <% if((title == "Dinner") || (title == "Seating")){ %>
+                        <select class="optionChange">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
+                        </select>
                     <% }; %>
                     <% if(title == "Tour combination"){ %>
+                        <select class="optionChange">
                         <option>None, thank you.</option>
                         <option>Pearl Harbor</option>
                         <option>Dole Plantation</option>
                         <option>North Shore</option>
                         <option>Pearl Harbor and the Dole Plantation</option>
                         <option>Circle Island</option>
+                        </select>
                     <% }; %>
-                </select>
+                        <% if ((title == "Lei greeting") || (title == "Canoe Ride") || (title == "Behind the scenes tour") || (title == "Souvenir DVD") || (title == "Dessert") || (title == "Tour guide")){ %>
+                        <div class="yes_no_wrap">
+                            <div class="yes_click pull-left"></div>
+                            <div class="no_click pull-right"></div>
+                        </div>
+                        <% } %>
             </form>
         </div>
         </div>
+
     </div>
     </script>
-    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/underscore.js"></script>
     <script src="./js/lib/backbone-min.js"></script>
     <script src="./js/main/main.js"></script>   

@@ -1,6 +1,5 @@
 ﻿
-(function(){
-jQuery(function(){ 
+
 var tourApp = {
     Models: {},
     Collections: {},
@@ -40,12 +39,6 @@ tourApp.Views.Tours = Backbone.View.extend({
     el: jQuery("#mainContainer"),
     template: tourApp.Templates.tours,
 
-    events: {
-        "change .optionChange": "changeOptionVal",
-        "click .yes_click": "yesClick",
-        "click .no_click" : "noClick"
-    },
-
     initialize: function () {
         this.collection.bind("reset", this.render, this);
         this.collection.bind("add", this.addOne, this);
@@ -56,69 +49,6 @@ tourApp.Views.Tours = Backbone.View.extend({
         this.addAll();
         jQuery('#mainContainer ul li:eq(0)').hide()
         jQuery('#mainContainer ul li:eq(1)').hide()
-    },
-    noClick: function(){
-        alert('no')
-    },
-    yesClick: function(){
-        alert('yes!');
-    },
-    changeOptionVal: function(){
-        var optionArray = {}
-        for (var i = 0; i < this.collection.models.length; i++) {
-
-                        
-                        var f = jQuery('.optionChange:eq('+i+')')[0].value;
-                        if (f === "yes") { 
-                                this.collection.models[i].set({"optionValue":"yes"});
-                        }
-                        if (f === "no"){
-                            this.collection.models[i].set({"optionValue":"no"});
-                        }
-                        if(f === "0"){
-                            this.collection.models[i].set({"optionValue":"0"});
-                        }
-                        if(f === "1"){
-                            this.collection.models[i].set({"optionValue":"1"});
-                        }
-                        if(f === "2"){
-                            this.collection.models[i].set({"optionValue":"2"});
-                        }
-                        if(f === "3"){
-                            this.collection.models[i].set({"optionValue":"3"});
-                        }
-                        if(f === "Dole Plantation"){
-                            this.collection.models[i].set({"optionValue":"dole"});
-                        }
-                        if(f === "Pearl Harbor"){
-                            this.collection.models[i].set({"optionValue":"pearl"});
-                        }
-                        if(f === "Pearl Harbor and the Dole Plantation"){
-                            this.collection.models[i].set({"optionValue":"pearlDole"});
-                        }
-                        if(f === "Circle Island"){
-                            this.collection.models[i].set({"optionValue":"all"});
-                        }
-                       if(f === "North Shore"){
-                            this.collection.models[i].set({"optionValue":"northShore"});
-                        }
-                        var option1 = this.collection.models[i].get("optionName");                  
-                        var option2 = this.collection.models[i].get("optionValue");
-                        
-                        optionArray[option1] = option2;
-                              
-                        
-                        
-                 };
-                 console.log(optionArray);
-                  jQuery.ajax({
-                    type: "GET",
-                    url: "test.php",
-                    data: optionArray
-                    }).done(function(msg) {
-                   jQuery('#ajaxReturn').html(msg);
-                  });                         
-    
     },
 
     addAll: function () {
@@ -139,7 +69,11 @@ tourApp.Templates.tour = _.template(jQuery("#tmplt-Tour").html())
 tourApp.Views.Tour = Backbone.View.extend({
     tagName: "li",
     template: tourApp.Templates.tour,
-    //events: { "click .delete": "test" },
+    events: { 
+        "click .no_click" : "noClick",
+        "click .yes_click": "yesClick",
+        "change .optionChange": "changeOptionVal"
+    },
 
     initialize: function () {
         //_.bindAll(this, 'render', 'test');
@@ -149,7 +83,50 @@ tourApp.Views.Tour = Backbone.View.extend({
 
     render: function () {
         return jQuery(this.el).append(this.template(this.model.toJSON()));
-    }
+    },
+    
+    changeOptionVal: function() {
+    var q = this.model.get("title");
+    var r = jQuery('.optionChange').eq(0).val();
+    var s = jQuery('.optionChange').eq(1).val();
+    var t = jQuery('.optionChange').eq(2).val();
+
+        if (q == "Dinner") { 
+            this.model.set({
+                "optionValue": r
+            })
+            console.log(this.model.get("optionValue"));   
+
+         };
+        if (q == "Seating"){
+          this.model.set({
+                "optionValue": s
+            })
+            console.log(this.model.get("optionValue"));   
+            
+            
+        }
+        if(q == "Tour combination"){
+          this.model.set({
+                "optionValue": t
+            })
+            console.log(this.model.get("optionValue"));   
+            
+        }
+    },
+
+
+    noClick: function(){
+        var model = this;
+        model.model.set({"optionValue":"no"});
+        console.log(model.model.attributes);
+    },
+
+    yesClick: function(){
+        var model = this;
+        model.model.set({"optionValue":"yes"});
+        console.log(model.model.attributes);
+    },
 
 });
 
@@ -170,5 +147,21 @@ tourApp.Router = Backbone.Router.extend({
 
 var appRouter = new tourApp.Router();
 Backbone.history.start();
+
+jQuery("#findTour").click(function(){
+    
+    var c = {};
+    for (var i = 0; i < tourApp.tours.length; i++){
+      var a = tourApp.tours.models[i].get("optionName");
+      var b = tourApp.tours.models[i].get("optionValue");
+       c[a] = b;
+    }
+    console.log(c);
+    jQuery.ajax({
+       type: "GET",
+       url: "test.php",
+       data: c
+       }).done(function(msg) {
+      jQuery('#ajaxReturn').html("<h2>" + msg + "<h2>");
+     });                         
 });
-})();
