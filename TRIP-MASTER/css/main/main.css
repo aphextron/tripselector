@@ -64,6 +64,7 @@ width: 48px;
 height: 38px;
 overflow: hidden;
 background-image: url('../../img/yes_no_icon.png');
+cursor: pointer;
 }
 .no_click{
 
@@ -72,6 +73,7 @@ width: 42px;
 height: 39px;
 overflow: hidden;
 background-image: url('../../img/yes_no_icon.png');
+cursor: pointer;
 
 }
 
